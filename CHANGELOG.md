@@ -2,6 +2,12 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.0.1 - 2026-05-09
+
+- GitHub Pages Workflow auf Node 24 vorbereitet.
+- Actions-Umgebung fuer kommende GitHub Node-24-Umstellung aktualisiert.
+- Dokumentation und sichtbare Versionsanzeige synchronisiert.
+
 ## 1.0.0 - 2026-05-09
 
 - Initiale React/Vite/Tailwind Website erstellt.
