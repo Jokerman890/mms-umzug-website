@@ -2,6 +2,12 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.0.2 - 2026-05-09
+
+- Neues helleres Bremen-Parallax-Hintergrundbild erstellt und eingebunden.
+- Hero-Overlay aufgehellt, damit das Bremen-Motiv sichtbarer wirkt.
+- Versionierung fuer den abgeschlossenen Hintergrundbild-Feinschliff aktualisiert.
+
 ## 1.0.1 - 2026-05-09
 
 - GitHub Pages Workflow auf Node 24 vorbereitet.

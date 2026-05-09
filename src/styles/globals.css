@@ -225,6 +225,7 @@ summary {
 
 .hero {
   position: relative;
+  isolation: isolate;
   min-height: 760px;
   margin-top: -78px;
   padding: 126px 0 42px;
@@ -238,9 +239,9 @@ summary {
 }
 
 .hero-bg {
-  z-index: -3;
+  z-index: -2;
   background:
-    linear-gradient(90deg, rgba(7, 24, 39, 0.82), rgba(7, 24, 39, 0.38) 52%, rgba(7, 24, 39, 0.58)),
+    linear-gradient(90deg, rgba(7, 24, 39, 0.72), rgba(7, 24, 39, 0.24) 52%, rgba(7, 24, 39, 0.42)),
     var(--hero-bg-image),
     radial-gradient(circle at 55% 26%, #31516b, #071827 70%);
   background-size: cover;
@@ -249,10 +250,10 @@ summary {
 }
 
 .hero-overlay {
-  z-index: -2;
+  z-index: -1;
   background:
-    linear-gradient(to bottom, rgba(7, 24, 39, 0.04), rgba(7, 24, 39, 0.12) 65%, #071827 100%),
-    radial-gradient(circle at 75% 42%, rgba(79, 224, 79, 0.12), transparent 26rem);
+    linear-gradient(to bottom, rgba(7, 24, 39, 0), rgba(7, 24, 39, 0.08) 66%, #071827 100%),
+    radial-gradient(circle at 75% 42%, rgba(79, 224, 79, 0.08), transparent 26rem);
 }
 
 .hero-inner {
