@@ -30,10 +30,16 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-  background:
+  background-image:
+    linear-gradient(180deg, rgba(7, 24, 39, 0.22) 0%, rgba(7, 24, 39, 0.52) 42%, rgba(7, 24, 39, 0.74) 100%),
     radial-gradient(circle at 20% 12%, rgba(79, 224, 79, 0.12), transparent 26rem),
     radial-gradient(circle at 80% 20%, rgba(73, 143, 183, 0.22), transparent 32rem),
+    var(--page-bg-image),
     linear-gradient(180deg, #102d42 0%, #071827 34%, #0a2435 100%);
+  background-size: auto, auto, auto, cover, auto;
+  background-position: center, 20% 12%, 80% 20%, center top, center;
+  background-repeat: no-repeat;
+  background-attachment: scroll, scroll, scroll, fixed, scroll;
 }
 
 body::before {
@@ -428,6 +434,12 @@ summary {
 .gallery-section,
 .faq-section {
   padding: 28px 0;
+  scroll-margin-top: 118px;
+}
+
+.contact-card,
+.why-card {
+  scroll-margin-top: 118px;
 }
 
 .service-grid {
@@ -1011,6 +1023,13 @@ summary {
 
   .site-footer {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+    background-position: center, 20% 12%, 80% 20%, center top, center;
   }
 }
 

@@ -16,6 +16,7 @@ pnpm-debug.log*
 # Local caches and temporary work files
 .vite/
 .cache/
+.codex/
 .playwright-mcp/
 tmp_logo_pack/
 tmp_pdf_previews/

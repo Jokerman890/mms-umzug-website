@@ -2,6 +2,13 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.0.3 - 2026-05-10
+
+- Helles, seitenweites Bremen-Parallax-Hintergrundbild ergaenzt.
+- Seitenhintergrund mit Fixed-Parallax auf Desktop und statischem Verhalten auf Mobile eingebunden.
+- Unnoetige Paket-Dependencies `npm` und `run` aus dem Projekt bereinigt.
+- Dokumentation fuer das neue Parallax-Asset aktualisiert.
+
 ## 1.0.2 - 2026-05-09
 
 - Neues helleres Bremen-Parallax-Hintergrundbild erstellt und eingebunden.

@@ -6,7 +6,7 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 
 ## Projektstatus
 
-- Version: `1.0.0`
+- Version: `1.0.3`
 - Deployment-Ziel: `https://jokerman890.github.io/mms-umzug-website/`
 - Framework: React + TypeScript + Vite
 - Styling: Tailwind CSS plus projektweites CSS in `src/styles/globals.css`
@@ -70,6 +70,7 @@ Wichtige Dateien:
 - `mms-fahrzeug-collage.jpg`: vollstaendige Fahrzeug-Collage
 - `mms-montage.jpg`: Montage-/Einsatzbild
 - `bremen-background.jpg`: Hero-Parallax-Hintergrund
+- `bremen-page-parallax.png`: helles seitenweites Bremen-Parallax-Bild fuer den gesamten Seitenhintergrund
 
 Wichtig: Fahrzeugbilder duerfen nicht generativ ersetzt, kuenstlich umbeschriftet oder verzerrt werden.
 
