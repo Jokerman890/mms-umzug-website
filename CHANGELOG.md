@@ -2,6 +2,12 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.0.4 - 2026-05-10
+
+- `npm test` mit Vitest, jsdom und Testing Library eingerichtet.
+- Smoke-Tests fuer Landingpage-CTAs, Kontaktformular, JSON-LD, zentrale Firmendaten, Services und Public-Asset-Aufloesung ergaenzt.
+- README um Testkommandos und Teststrategie aktualisiert.
+
 ## 1.0.3 - 2026-05-10
 
 - Helles, seitenweites Bremen-Parallax-Hintergrundbild ergaenzt.

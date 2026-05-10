@@ -6,7 +6,7 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 
 ## Projektstatus
 
-- Version: `1.0.3`
+- Version: `1.0.4`
 - Deployment-Ziel: `https://jokerman890.github.io/mms-umzug-website/`
 - Framework: React + TypeScript + Vite
 - Styling: Tailwind CSS plus projektweites CSS in `src/styles/globals.css`
@@ -88,9 +88,12 @@ Die lokale App laeuft standardmaessig ueber Vite.
 ```bash
 npm run build
 npm run lint
+npm test
 ```
 
-Ein `npm test` Script ist aktuell nicht vorhanden.
+`npm test` nutzt Vitest im Run-Modus mit jsdom und Testing Library. Die Tests decken die wichtigsten
+Landingpage-Risiken ab: Kontakt-CTAs, Angebotsformular, strukturierte SEO-Daten, zentrale Firmendaten,
+Leistungsdaten und Public-Asset-Pfade.
 
 ## GitHub Pages Deployment
 
@@ -104,7 +107,7 @@ Trigger:
 Pipeline:
 
 1. Checkout
-2. Node 20 einrichten
+2. Node 24 einrichten
 3. `npm ci`
 4. `npm run build`
 5. `dist` als Pages Artifact hochladen
@@ -129,7 +132,7 @@ Vor jedem abgeschlossenen PR/Release:
 2. `src/data/version.ts` synchron halten
 3. `CHANGELOG.md` aktualisieren
 4. `README.md` aktualisieren, falls Setup, Deployment, Assets oder Nutzung betroffen sind
-5. `npm run build` und `npm run lint` ausfuehren
+5. `npm run build`, `npm run lint` und `npm test` ausfuehren
 
 ## Aktuelle Kontaktinfos
 
