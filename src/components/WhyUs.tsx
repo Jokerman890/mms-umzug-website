@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { publicAsset } from "../data/assets";
 import { AssetImage } from "./AssetImage";
@@ -12,7 +13,14 @@ const bullets = [
 
 export function WhyUs() {
   return (
-    <section className="why-card" id="warum">
+    <motion.section
+      className="why-card"
+      id="warum"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-70px" }}
+      transition={{ duration: 0.48, ease: "easeOut" }}
+    >
       <div>
         <span>Warum MMS Umzug?</span>
         <h2>
@@ -20,11 +28,17 @@ export function WhyUs() {
         </h2>
         <p>Wir arbeiten schnell, sauber und kundenorientiert. Ihre Zufriedenheit steht für uns an erster Stelle.</p>
         <ul>
-          {bullets.map((bullet) => (
-            <li key={bullet}>
+          {bullets.map((bullet, index) => (
+            <motion.li
+              key={bullet}
+              initial={{ opacity: 0, x: -12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.32, delay: index * 0.05, ease: "easeOut" }}
+            >
               <CheckCircle2 aria-hidden="true" />
               {bullet}
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
@@ -34,6 +48,6 @@ export function WhyUs() {
         fallbackLabel="Montagebild fehlt"
         className="why-image"
       />
-    </section>
+    </motion.section>
   );
 }

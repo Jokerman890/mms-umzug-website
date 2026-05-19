@@ -11,6 +11,11 @@ export function Hero() {
     <section className="hero" id="start" style={{ "--hero-bg-image": `url("${assetPaths.bremen}")` } as CSSProperties}>
       <div className="hero-bg" aria-hidden="true" />
       <div className="hero-overlay" aria-hidden="true" />
+      <div className="hero-motion-field" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
       <div className="container hero-inner">
         <motion.div
           className="hero-copy"
@@ -69,6 +74,9 @@ export function Hero() {
           {trustPills.map((pill) => (
             <span key={pill}>{pill}</span>
           ))}
+        </div>
+        <div className="scroll-cue" aria-hidden="true">
+          <span />
         </div>
       </div>
     </section>

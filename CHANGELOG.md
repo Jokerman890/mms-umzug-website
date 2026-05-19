@@ -2,6 +2,13 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.0.7 - 2026-05-19
+
+- Website mit konsistenten Motion-Reveals fuer Trust-Bar, Ablauf, Galerie, Warum-MMS und FAQ aufgewertet.
+- Hero mit dezenten Glas-Floating-Elementen, animiertem Bremen-Hintergrund, Scroll-Hinweis und Logo-Glow verfeinert.
+- CTA-, Service-, Galerie-, Formular- und Kontakt-Interaktionen mit Hover-/Focus-Feedback und gruenem Glow verbessert.
+- Bewegungen respektieren `prefers-reduced-motion`, damit die Seite barrierearm bedienbar bleibt.
+
 ## 1.0.6 - 2026-05-19
 
 - Hero-Headline nutzt die MMS-Wortmarke aus dem Logo statt reinem Text fuer `MMS`.
