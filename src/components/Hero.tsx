@@ -11,6 +11,11 @@ export function Hero() {
     <section className="hero" id="start" style={{ "--hero-bg-image": `url("${assetPaths.bremen}")` } as CSSProperties}>
       <div className="hero-bg" aria-hidden="true" />
       <div className="hero-overlay" aria-hidden="true" />
+      <div className="hero-motion-field" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
       <div className="container hero-inner">
         <motion.div
           className="hero-copy"
@@ -18,8 +23,12 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
         >
-          <h1>
-            <span>MMS Umzug</span> Bremen -
+          <h1 aria-label="MMS Umzug Bremen - Umzug, Entrümpelung & Dienstleistungen aus einer Hand">
+            <span className="hero-title-brand">
+              <AssetImage src={assetPaths.logoWordmark} alt="MMS" fallbackLabel="MMS" className="hero-title-logo" />
+              <span>Umzug</span>
+            </span>{" "}
+            Bremen -
             <br />
             Umzug, Entrümpelung & Dienstleistungen aus einer Hand
           </h1>
@@ -65,6 +74,9 @@ export function Hero() {
           {trustPills.map((pill) => (
             <span key={pill}>{pill}</span>
           ))}
+        </div>
+        <div className="scroll-cue" aria-hidden="true">
+          <span />
         </div>
       </div>
     </section>

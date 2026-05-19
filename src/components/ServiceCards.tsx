@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { services } from "../data/services";
+import { allServices, services } from "../data/services";
 
 export function ServiceCards() {
   return (
@@ -36,6 +36,13 @@ export function ServiceCards() {
               </motion.article>
             );
           })}
+        </div>
+        <div className="service-tags" aria-label="Weitere Angebote">
+          {allServices.map((service) => (
+            <a key={service} href="#kontakt">
+              {service}
+            </a>
+          ))}
         </div>
       </div>
     </section>
