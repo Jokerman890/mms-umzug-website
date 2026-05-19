@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { App } from "./App";
 import { company } from "./data/company";
+import { buildInquiryMailto } from "./lib/mailto";
 
 describe("App", () => {
   it("renders the primary landing page and contact CTAs", () => {
@@ -25,7 +26,18 @@ describe("App", () => {
     await user.type(screen.getByLabelText("Nachricht"), "Bitte um ein unverbindliches Angebot.");
     await user.click(screen.getByRole("button", { name: /anfrage per e-mail vorbereiten/i }));
 
-    expect(screen.getByText(/E-Mail-Programm/i)).toBeInTheDocument();
+    const mailLink = screen.getByRole("link", { name: /e-mail öffnen/i });
+    expect(screen.getByText(/Ihre Anfrage ist vorbereitet/i)).toBeInTheDocument();
+    expect(mailLink).toHaveAttribute(
+      "href",
+      buildInquiryMailto({
+        name: "Max Mustermann",
+        phone: "0176 00000000",
+        email: "",
+        service: "Umzüge",
+        message: "Bitte um ein unverbindliches Angebot.",
+      }),
+    );
   });
 
   it("exposes valid MovingCompany JSON-LD with central company data", () => {

@@ -2,9 +2,11 @@ import { FormEvent, useState } from "react";
 import { Globe2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { company } from "../data/company";
 import { allServices } from "../data/services";
+import { buildInquiryMailto } from "../lib/mailto";
 
 export function ContactSection() {
   const [sent, setSent] = useState(false);
+  const [mailtoHref, setMailtoHref] = useState("");
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -15,20 +17,8 @@ export function ContactSection() {
     const email = String(formData.get("email") || "");
     const service = String(formData.get("service") || "");
     const message = String(formData.get("message") || "");
-    const body = [
-      `Name: ${name}`,
-      `Telefon: ${phone}`,
-      email ? `E-Mail: ${email}` : "",
-      `Leistung: ${service}`,
-      "",
-      message,
-    ]
-      .filter(Boolean)
-      .join("\n");
 
-    window.location.href = `${company.emailHref}?subject=${encodeURIComponent(
-      `Anfrage über ${company.domain}`,
-    )}&body=${encodeURIComponent(body)}`;
+    setMailtoHref(buildInquiryMailto({ name, phone, email, service, message }));
     setSent(true);
   }
 
@@ -93,7 +83,14 @@ export function ContactSection() {
           <Send aria-hidden="true" />
           Anfrage per E-Mail vorbereiten
         </button>
-        {sent ? <p className="form-status">Ihr E-Mail-Programm wurde mit der Anfrage vorbereitet.</p> : null}
+        {sent && mailtoHref ? (
+          <p className="form-status">
+            Ihre Anfrage ist vorbereitet.{" "}
+            <a className="form-mail-link" href={mailtoHref}>
+              E-Mail öffnen
+            </a>
+          </p>
+        ) : null}
       </form>
     </section>
   );
