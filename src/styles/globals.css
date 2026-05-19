@@ -1018,6 +1018,27 @@ summary {
   text-underline-offset: 4px;
 }
 
+.quote-form input.error,
+.quote-form select.error,
+.quote-form textarea.error {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.15);
+}
+
+.quote-form input.error:focus,
+.quote-form select.error:focus,
+.quote-form textarea.error:focus {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.15);
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
 .faq-grid {
   display: grid;
   gap: 10px;
