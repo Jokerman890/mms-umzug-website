@@ -4,20 +4,59 @@ import { company } from "../data/company";
 import { allServices } from "../data/services";
 import { buildInquiryMailto } from "../lib/mailto";
 
+type FormErrors = {
+  name?: string;
+  phone?: string;
+  email?: string;
+  service?: string;
+  message?: string;
+};
+
+function validateEmail(email: string): boolean {
+  if (!email) return true;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
 export function ContactSection() {
   const [sent, setSent] = useState(false);
   const [mailtoHref, setMailtoHref] = useState("");
+  const [errors, setErrors] = useState<FormErrors>({});
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const name = String(formData.get("name") || "");
-    const phone = String(formData.get("phone") || "");
-    const email = String(formData.get("email") || "");
-    const service = String(formData.get("service") || "");
-    const message = String(formData.get("message") || "");
+    const name = String(formData.get("name") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const service = String(formData.get("service") || "").trim();
+    const message = String(formData.get("message") || "").trim();
 
+    const newErrors: FormErrors = {};
+
+    if (!name) {
+      newErrors.name = "Bitte geben Sie Ihren Namen ein.";
+    }
+    if (!phone) {
+      newErrors.phone = "Bitte geben Sie Ihre Telefonnummer ein.";
+    }
+    if (email && !validateEmail(email)) {
+      newErrors.email = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+    }
+    if (!service) {
+      newErrors.service = "Bitte wählen Sie eine Leistung aus.";
+    }
+    if (!message) {
+      newErrors.message = "Bitte geben Sie eine Nachricht ein.";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
     setMailtoHref(buildInquiryMailto({ name, phone, email, service, message }));
     setSent(true);
   }
@@ -51,22 +90,25 @@ export function ContactSection() {
           {company.address}
         </span>
       </div>
-      <form className="quote-form" onSubmit={handleSubmit}>
+      <form className="quote-form" onSubmit={handleSubmit} noValidate>
         <label>
           Name
-          <input name="name" autoComplete="name" required />
+          <input name="name" autoComplete="name" required className={errors.name ? "error" : ""} />
+          {errors.name && <span className="error-message">{errors.name}</span>}
         </label>
         <label>
           Telefon
-          <input name="phone" type="tel" autoComplete="tel" required />
+          <input name="phone" type="tel" autoComplete="tel" required className={errors.phone ? "error" : ""} />
+          {errors.phone && <span className="error-message">{errors.phone}</span>}
         </label>
         <label>
           E-Mail optional
-          <input name="email" type="email" autoComplete="email" />
+          <input name="email" type="email" autoComplete="email" className={errors.email ? "error" : ""} />
+          {errors.email && <span className="error-message">{errors.email}</span>}
         </label>
         <label>
           Leistung auswählen
-          <select name="service" defaultValue="" required>
+          <select name="service" defaultValue="" required className={errors.service ? "error" : ""}>
             <option value="" disabled>
               Bitte auswählen
             </option>
@@ -74,10 +116,12 @@ export function ContactSection() {
               <option key={service}>{service}</option>
             ))}
           </select>
+          {errors.service && <span className="error-message">{errors.service}</span>}
         </label>
         <label className="full">
           Nachricht
-          <textarea name="message" rows={4} required />
+          <textarea name="message" rows={4} required className={errors.message ? "error" : ""} />
+          {errors.message && <span className="error-message">{errors.message}</span>}
         </label>
         <button type="submit">
           <Send aria-hidden="true" />
