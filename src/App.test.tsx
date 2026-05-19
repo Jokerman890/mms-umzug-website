@@ -27,6 +27,8 @@ describe("App", () => {
     await user.click(screen.getByRole("button", { name: /anfrage per e-mail vorbereiten/i }));
 
     const mailLink = screen.getByRole("link", { name: /e-mail öffnen/i });
+    const mailHref = mailLink.getAttribute("href") ?? "";
+
     expect(screen.getByText(/Ihre Anfrage ist vorbereitet/i)).toBeInTheDocument();
     expect(mailLink).toHaveAttribute(
       "href",
@@ -38,6 +40,13 @@ describe("App", () => {
         message: "Bitte um ein unverbindliches Angebot.",
       }),
     );
+    expect(mailHref).toMatch(new RegExp(`^mailto:${company.email}\\?`));
+    expect(mailHref).not.toContain("mailto:mailto:");
+    expect(mailHref).toContain(`subject=${encodeURIComponent(`Anfrage über ${company.domain}`)}`);
+    expect(mailHref).toContain("Name%3A%20Max%20Mustermann");
+    expect(mailHref).toContain("Telefon%3A%200176%2000000000");
+    expect(mailHref).toContain("Leistung%3A%20Umz%C3%BCge");
+    expect(mailHref).toContain("Bitte%20um%20ein%20unverbindliches%20Angebot.");
   });
 
   it("exposes valid MovingCompany JSON-LD with central company data", () => {
