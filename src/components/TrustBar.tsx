@@ -1,10 +1,10 @@
-import { CalendarDays, MapPin, ShieldCheck, UsersRound } from "lucide-react";
+import { CalendarDays, HandCoins, MapPin, ShieldCheck } from "lucide-react";
 
 const items = [
-  { icon: UsersRound, value: "500+", label: "zufriedene Kunden" },
-  { icon: CalendarDays, value: "5+", label: "Jahre Erfahrung" },
+  { icon: CalendarDays, value: "Schnell", label: "Termin abstimmen" },
+  { icon: HandCoins, value: "Fair", label: "transparent anfragen" },
   { icon: MapPin, value: "Bremen", label: "und Umgebung" },
-  { icon: ShieldCheck, value: "100%", label: "Zuverlässigkeit" },
+  { icon: ShieldCheck, value: "Sorgfältig", label: "sauber ausgeführt" },
 ];
 
 export function TrustBar() {

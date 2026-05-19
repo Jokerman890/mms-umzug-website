@@ -2,6 +2,14 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.0.5 - 2026-05-19
+
+- Kaputte Umlaute in sichtbaren Texten, Meta-Daten und JSON-LD repariert.
+- Unbestaetigte Trust-Zahlen durch qualitative Vertrauensmerkmale ersetzt.
+- Alle Leistungen als klickbare Service-Tags im Leistungsbereich sichtbar gemacht.
+- Kontaktbereich mit WhatsApp-Zeile, groesseren Kontaktflaechen und echter E-Mail-Vorbereitung verbessert.
+- Hintergrund und Kontakt-/Service-Details visuell heller und conversion-freundlicher abgestimmt.
+
 ## 1.0.4 - 2026-05-10
 
 - `npm test` mit Vitest, jsdom und Testing Library eingerichtet.

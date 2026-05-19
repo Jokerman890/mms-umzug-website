@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { Globe2, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Globe2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { company } from "../data/company";
 import { allServices } from "../data/services";
 
@@ -8,6 +8,27 @@ export function ContactSection() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "");
+    const phone = String(formData.get("phone") || "");
+    const email = String(formData.get("email") || "");
+    const service = String(formData.get("service") || "");
+    const message = String(formData.get("message") || "");
+    const body = [
+      `Name: ${name}`,
+      `Telefon: ${phone}`,
+      email ? `E-Mail: ${email}` : "",
+      `Leistung: ${service}`,
+      "",
+      message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    window.location.href = `${company.emailHref}?subject=${encodeURIComponent(
+      `Anfrage über ${company.domain}`,
+    )}&body=${encodeURIComponent(body)}`;
     setSent(true);
   }
 
@@ -16,11 +37,16 @@ export function ContactSection() {
       <div className="section-heading">
         <span>Kontaktieren Sie uns</span>
         <h2>Wir sind für Sie da!</h2>
+        <p>Direkt anrufen, per WhatsApp schreiben oder das Formular als E-Mail vorbereiten.</p>
       </div>
       <div className="contact-lines">
         <a href={company.phoneHref}>
           <Phone aria-hidden="true" />
           {company.phone}
+        </a>
+        <a href={company.whatsappHref}>
+          <MessageCircle aria-hidden="true" />
+          WhatsApp-Anfrage senden
         </a>
         <a href={company.emailHref}>
           <Mail aria-hidden="true" />
@@ -65,9 +91,9 @@ export function ContactSection() {
         </label>
         <button type="submit">
           <Send aria-hidden="true" />
-          Jetzt unverbindlich anfragen
+          Anfrage per E-Mail vorbereiten
         </button>
-        {sent ? <p className="form-status">Danke. Die Backend-Integration kann hier später angeschlossen werden.</p> : null}
+        {sent ? <p className="form-status">Ihr E-Mail-Programm wurde mit der Anfrage vorbereitet.</p> : null}
       </form>
     </section>
   );

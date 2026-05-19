@@ -15,17 +15,17 @@ describe("App", () => {
     expect(screen.getAllByText(company.address).length).toBeGreaterThan(0);
   });
 
-  it("submits the quote form without leaving the page", async () => {
+  it("prepares the quote form as an email request", async () => {
     const user = userEvent.setup();
     render(<App />);
 
     await user.type(screen.getByLabelText("Name"), "Max Mustermann");
     await user.type(screen.getByLabelText("Telefon"), "0176 00000000");
-    await user.selectOptions(screen.getByLabelText(/Leistung/i), "Umzüge");
+    await user.selectOptions(screen.getByLabelText(/^Leistung auswählen$/i), "Umzüge");
     await user.type(screen.getByLabelText("Nachricht"), "Bitte um ein unverbindliches Angebot.");
-    await user.click(screen.getByRole("button", { name: /jetzt unverbindlich anfragen/i }));
+    await user.click(screen.getByRole("button", { name: /anfrage per e-mail vorbereiten/i }));
 
-    expect(screen.getByText(/Backend-Integration/i)).toBeInTheDocument();
+    expect(screen.getByText(/E-Mail-Programm/i)).toBeInTheDocument();
   });
 
   it("exposes valid MovingCompany JSON-LD with central company data", () => {
