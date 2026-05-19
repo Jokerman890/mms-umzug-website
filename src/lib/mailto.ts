@@ -20,7 +20,7 @@ export function buildInquiryMailto({ name, phone, email, service, message }: Inq
     .filter(Boolean)
     .join("\n");
 
-  return `mailto:${company.email}?subject=${encodeURIComponent(
+  return `mailto:${encodeURIComponent(company.email)}?subject=${encodeURIComponent(
     `Anfrage über ${company.domain}`,
   )}&body=${encodeURIComponent(body)}`;
 }

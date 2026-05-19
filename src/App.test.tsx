@@ -40,7 +40,7 @@ describe("App", () => {
         message: "Bitte um ein unverbindliches Angebot.",
       }),
     );
-    expect(mailHref).toMatch(new RegExp(`^mailto:${company.email}\\?`));
+    expect(mailHref).toMatch(new RegExp(`^mailto:${encodeURIComponent(company.email)}`));
     expect(mailHref).not.toContain("mailto:mailto:");
     expect(mailHref).toContain(`subject=${encodeURIComponent(`Anfrage über ${company.domain}`)}`);
     expect(mailHref).toContain("Name%3A%20Max%20Mustermann");
