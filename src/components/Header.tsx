@@ -10,8 +10,7 @@ export function Header() {
     <header className="site-header">
       <nav className="nav-shell container" aria-label="Hauptnavigation">
         <a className="brand" href="#start" aria-label="MMS Umzug Startseite">
-          <AssetImage src={assetPaths.logoMark} alt="MMS Logo" fallbackLabel="MMS" className="brand-logo-mark" />
-          <span className="brand-word">Umzug</span>
+          <AssetImage src={assetPaths.logo} alt="MMS Umzug Logo" fallbackLabel="MMS Umzug" className="brand-logo" />
         </a>
 
         <div className="desktop-nav">

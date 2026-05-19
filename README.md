@@ -63,7 +63,6 @@ Die Website nutzt Assets aus `public/images/mms/`.
 Wichtige Dateien:
 
 - `mms-logo.svg`: Logo aus dem Web-Pack fuer Header/Footer
-- `mms-logo-mark.svg`: MMS-Marke ohne darunterstehendes Umzug-Wort fuer Header/Footer
 - `mms-logo.png`: PNG-Fallback/Asset-Variante
 - `mms-logo-white.svg` und `mms-logo-white.png`: helle Varianten
 - `mms-fahrzeug-hero.jpg`: Hero-Fahrzeugbild

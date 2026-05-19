@@ -27,7 +27,6 @@ export const navItems = [
 
 export const assetPaths = {
   logo: publicAsset("images/mms/mms-logo.svg"),
-  logoMark: publicAsset("images/mms/mms-logo-mark.svg"),
   bremen: publicAsset("images/mms/bremen-background.jpg"),
   heroVehicle: publicAsset("images/mms/mms-fahrzeug-hero.jpg"),
 };

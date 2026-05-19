@@ -10,8 +10,7 @@ export function Footer() {
       <div className="container footer-grid">
         <div>
           <a className="brand footer-brand" href="#start" aria-label="MMS Umzug Startseite">
-            <AssetImage src={assetPaths.logoMark} alt="MMS Logo" fallbackLabel="MMS" className="brand-logo-mark" />
-            <span className="brand-word">Umzug</span>
+            <AssetImage src={assetPaths.logo} alt="MMS Umzug Logo" fallbackLabel="MMS Umzug" className="brand-logo" />
           </a>
           <p>Ihr zuverlässiger Partner für Umzüge, Entrümpelungen und Dienstleistungen in Bremen und Umgebung.</p>
         </div>

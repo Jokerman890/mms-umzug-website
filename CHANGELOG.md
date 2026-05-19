@@ -9,7 +9,7 @@ Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 - Alle Leistungen als klickbare Service-Tags im Leistungsbereich sichtbar gemacht.
 - Kontaktbereich mit WhatsApp-Zeile, groesseren Kontaktflaechen und echter E-Mail-Vorbereitung verbessert.
 - Hintergrund und Kontakt-/Service-Details visuell heller und conversion-freundlicher abgestimmt.
-- Logo-Blau auf MMS-Gruen umgestellt und Header/Footer auf MMS-Marke plus danebenstehendes `Umzug`-Wort angepasst.
+- Logo-Blau auf MMS-Gruen umgestellt, Orange beibehalten und Header/Footer-Logo transparent ohne weisse Kapsel dargestellt.
 
 ## 1.0.4 - 2026-05-10
 
