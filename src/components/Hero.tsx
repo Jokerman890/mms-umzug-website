@@ -18,8 +18,12 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
         >
-          <h1>
-            <span>MMS Umzug</span> Bremen -
+          <h1 aria-label="MMS Umzug Bremen - Umzug, Entrümpelung & Dienstleistungen aus einer Hand">
+            <span className="hero-title-brand">
+              <AssetImage src={assetPaths.logoWordmark} alt="MMS" fallbackLabel="MMS" className="hero-title-logo" />
+              <span>Umzug</span>
+            </span>{" "}
+            Bremen -
             <br />
             Umzug, Entrümpelung & Dienstleistungen aus einer Hand
           </h1>
