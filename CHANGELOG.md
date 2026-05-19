@@ -2,6 +2,13 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.0.6 - 2026-05-19
+
+- Hero-Headline nutzt die MMS-Wortmarke aus dem Logo statt reinem Text fuer `MMS`.
+- Vollstaendiges Header/Footer-Logo bleibt inklusive kleinem `UMZUG` erhalten.
+- Logo-Assets mit Cache-Busting versehen, damit die gruen/orange SVG-Version sicher neu geladen wird.
+- README um die neue Hero-Wortmarke und Logo-Verwendung ergaenzt.
+
 ## 1.0.5 - 2026-05-19
 
 - Kaputte Umlaute in sichtbaren Texten, Meta-Daten und JSON-LD repariert.

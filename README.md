@@ -6,7 +6,7 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 
 ## Projektstatus
 
-- Version: `1.0.5`
+- Version: `1.0.6`
 - Deployment-Ziel: `https://jokerman890.github.io/mms-umzug-website/`
 - Framework: React + TypeScript + Vite
 - Styling: Tailwind CSS plus projektweites CSS in `src/styles/globals.css`
@@ -62,7 +62,8 @@ Die Website nutzt Assets aus `public/images/mms/`.
 
 Wichtige Dateien:
 
-- `mms-logo.svg`: Logo aus dem Web-Pack fuer Header/Footer
+- `mms-logo.svg`: gruen/orange Voll-Logo aus dem Web-Pack fuer Header/Footer
+- `mms-logo-wordmark.svg`: MMS-Wortmarke ohne kleines Umzug-Wort fuer die grosse Hero-Headline
 - `mms-logo.png`: PNG-Fallback/Asset-Variante
 - `mms-logo-white.svg` und `mms-logo-white.png`: helle Varianten
 - `mms-fahrzeug-hero.jpg`: Hero-Fahrzeugbild
