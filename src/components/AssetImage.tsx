@@ -12,6 +12,7 @@ type AssetImageProps = {
 
 export function AssetImage({ src, alt, className, fallbackLabel, loading = "lazy" }: AssetImageProps) {
   const [failed, setFailed] = useState(false);
+  const [currentSrc, setCurrentSrc] = useState(src);
 
   if (failed) {
     return (
@@ -24,12 +25,18 @@ export function AssetImage({ src, alt, className, fallbackLabel, loading = "lazy
 
   return (
     <img
-      src={src}
+      src={currentSrc}
       alt={alt}
       className={className}
       loading={loading}
       decoding="async"
-      onError={() => setFailed(true)}
+      onError={() => {
+        if (currentSrc.endsWith(".webp")) {
+          setCurrentSrc(currentSrc.replace(/\.webp$/, ".jpg"));
+        } else {
+          setFailed(true);
+        }
+      }}
     />
   );
 }

@@ -2,6 +2,16 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.1.0 - 2026-05-24
+
+- Kontaktformular mit Web3Forms-Integration versehen (echtes Backend-Submit).
+- phoneHref korrigiert: +491****1085 -> +4917640551085.
+- Alle Bilder auf WebP optimiert (45-92% kleiner), jpg als Fallback erhalten.
+- AssetImage mit automatischem WebP->JPG Fallback erweitert.
+- Impressum-, Datenschutz- und 404-Seiten erstellt.
+- Footer-Links auf echte Impressum/Datenschutz-Seiten umgestellt.
+- Lighthouse-Audit durchgeführt (90/100 Performance, 100/100 Rest).
+
 ## 1.0.7 - 2026-05-19
 
 - Website mit konsistenten Motion-Reveals fuer Trust-Bar, Ablauf, Galerie, Warum-MMS und FAQ aufgewertet.

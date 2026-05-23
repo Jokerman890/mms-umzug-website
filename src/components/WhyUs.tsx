@@ -43,7 +43,7 @@ export function WhyUs() {
         </ul>
       </div>
       <AssetImage
-        src={publicAsset("images/mms/mms-montage.jpg")}
+        src={publicAsset("images/mms/mms-montage.webp")}
         alt="MMS Umzug bei Möbeltransport und Montage"
         fallbackLabel="Montagebild fehlt"
         className="why-image"

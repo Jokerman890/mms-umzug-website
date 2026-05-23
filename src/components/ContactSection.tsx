@@ -2,7 +2,6 @@ import { FormEvent, useState } from "react";
 import { Globe2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { company } from "../data/company";
 import { allServices } from "../data/services";
-import { buildInquiryMailto } from "../lib/mailto";
 
 type FormErrors = {
   name?: string;
@@ -20,13 +19,15 @@ function validateEmail(email: string): boolean {
 
 export function ContactSection() {
   const [sent, setSent] = useState(false);
-  const [mailtoHref, setMailtoHref] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitting) return;
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const name = String(formData.get("name") || "").trim();
     const phone = String(formData.get("phone") || "").trim();
     const email = String(formData.get("email") || "").trim();
@@ -34,22 +35,11 @@ export function ContactSection() {
     const message = String(formData.get("message") || "").trim();
 
     const newErrors: FormErrors = {};
-
-    if (!name) {
-      newErrors.name = "Bitte geben Sie Ihren Namen ein.";
-    }
-    if (!phone) {
-      newErrors.phone = "Bitte geben Sie Ihre Telefonnummer ein.";
-    }
-    if (email && !validateEmail(email)) {
-      newErrors.email = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
-    }
-    if (!service) {
-      newErrors.service = "Bitte wählen Sie eine Leistung aus.";
-    }
-    if (!message) {
-      newErrors.message = "Bitte geben Sie eine Nachricht ein.";
-    }
+    if (!name) newErrors.name = "Bitte geben Sie Ihren Namen ein.";
+    if (!phone) newErrors.phone = "Bitte geben Sie Ihre Telefonnummer ein.";
+    if (email && !validateEmail(email)) newErrors.email = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+    if (!service) newErrors.service = "Bitte wählen Sie eine Leistung aus.";
+    if (!message) newErrors.message = "Bitte geben Sie eine Nachricht ein.";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -57,8 +47,24 @@ export function ContactSection() {
     }
 
     setErrors({});
-    setMailtoHref(buildInquiryMailto({ name, phone, email, service, message }));
-    setSent(true);
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      if (res.ok) {
+        setSent(true);
+        form.reset();
+      } else {
+        setErrors({ message: "Fehler beim Senden. Bitte versuchen Sie es später erneut oder rufen Sie uns an." });
+      }
+    } catch {
+      setErrors({ message: "Fehler beim Senden. Bitte versuchen Sie es später erneut oder rufen Sie uns an." });
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -66,7 +72,7 @@ export function ContactSection() {
       <div className="section-heading">
         <span>Kontaktieren Sie uns</span>
         <h2>Wir sind für Sie da!</h2>
-        <p>Direkt anrufen, per WhatsApp schreiben oder das Formular als E-Mail vorbereiten.</p>
+        <p>Direkt anrufen, per WhatsApp schreiben oder das Formular ausfüllen – wir melden uns umgehend.</p>
       </div>
       <div className="contact-lines">
         <a href={company.phoneHref}>
@@ -90,52 +96,54 @@ export function ContactSection() {
           {company.address}
         </span>
       </div>
-      <form className="quote-form" onSubmit={handleSubmit} noValidate>
-        <label>
-          Name
-          <input name="name" autoComplete="name" required className={errors.name ? "error" : ""} />
-          {errors.name && <span className="error-message">{errors.name}</span>}
-        </label>
-        <label>
-          Telefon
-          <input name="phone" type="tel" autoComplete="tel" required className={errors.phone ? "error" : ""} />
-          {errors.phone && <span className="error-message">{errors.phone}</span>}
-        </label>
-        <label>
-          E-Mail optional
-          <input name="email" type="email" autoComplete="email" className={errors.email ? "error" : ""} />
-          {errors.email && <span className="error-message">{errors.email}</span>}
-        </label>
-        <label>
-          Leistung auswählen
-          <select name="service" defaultValue="" required className={errors.service ? "error" : ""}>
-            <option value="" disabled>
-              Bitte auswählen
-            </option>
-            {allServices.map((service) => (
-              <option key={service}>{service}</option>
-            ))}
-          </select>
-          {errors.service && <span className="error-message">{errors.service}</span>}
-        </label>
-        <label className="full">
-          Nachricht
-          <textarea name="message" rows={4} required className={errors.message ? "error" : ""} />
-          {errors.message && <span className="error-message">{errors.message}</span>}
-        </label>
-        <button type="submit">
-          <Send aria-hidden="true" />
-          Anfrage per E-Mail vorbereiten
-        </button>
-        {sent && mailtoHref ? (
-          <p className="form-status">
-            Ihre Anfrage ist vorbereitet.{" "}
-            <a className="form-mail-link" href={mailtoHref}>
-              E-Mail öffnen
-            </a>
-          </p>
-        ) : null}
-      </form>
+      {sent ? (
+        <p className="form-status success">
+          Vielen Dank für Ihre Anfrage! Wir melden uns so schnell wie möglich bei Ihnen.
+        </p>
+      ) : (
+        <form className="quote-form" onSubmit={handleSubmit} noValidate>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="subject" value={`Anfrage über ${company.domain}`} />
+          <input type="hidden" name="from_name" value="MMS Umzug Website" />
+          <label>
+            Name
+            <input name="name" autoComplete="name" required className={errors.name ? "error" : ""} />
+            {errors.name && <span className="error-message">{errors.name}</span>}
+          </label>
+          <label>
+            Telefon
+            <input name="phone" type="tel" autoComplete="tel" required className={errors.phone ? "error" : ""} />
+            {errors.phone && <span className="error-message">{errors.phone}</span>}
+          </label>
+          <label>
+            E-Mail optional
+            <input name="email" type="email" autoComplete="email" className={errors.email ? "error" : ""} />
+            {errors.email && <span className="error-message">{errors.email}</span>}
+          </label>
+          <label>
+            Leistung auswählen
+            <select name="service" defaultValue="" required className={errors.service ? "error" : ""}>
+              <option value="" disabled>Bitte auswählen</option>
+              {allServices.map((service) => (
+                <option key={service}>{service}</option>
+              ))}
+            </select>
+            {errors.service && <span className="error-message">{errors.service}</span>}
+          </label>
+          <label className="full">
+            Nachricht
+            <textarea name="message" rows={4} required className={errors.message ? "error" : ""} />
+            {errors.message && <span className="error-message">{errors.message}</span>}
+          </label>
+          <button type="submit" disabled={submitting}>
+            <Send aria-hidden="true" />
+            {submitting ? "Wird gesendet..." : "Jetzt unverbindlich anfragen"}
+          </button>
+          {errors.message && typeof errors.message === "string" && !errors.name && !errors.phone && !errors.email && !errors.service && (
+            <span className="error-message">{errors.message}</span>
+          )}
+        </form>
+      )}
     </section>
   );
 }

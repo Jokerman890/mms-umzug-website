@@ -49,8 +49,8 @@ export function Footer() {
       <div className="container footer-bottom">
         <small>© 2026 MMS Umzug - Alle Rechte vorbehalten. Version {appVersion}</small>
         <span>
-          <a href="#kontakt">Impressum</a>
-          <a href="#kontakt">Datenschutz</a>
+          <a href="./impressum.html">Impressum</a>
+          <a href="./datenschutz.html">Datenschutz</a>
         </span>
       </div>
     </footer>
