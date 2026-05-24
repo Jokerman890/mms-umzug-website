@@ -2,10 +2,15 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.1.1 - 2026-05-24
+
+- Sitemap.xml und robots.txt erstellt.
+- Open Graph + Twitter Card Tags in index.html ergaenzt.
+
 ## 1.1.0 - 2026-05-24
 
 - Kontaktformular mit Web3Forms-Integration versehen (echtes Backend-Submit).
-- phoneHref korrigiert: +491****1085 -> +4917640551085.
+- phoneHref korrigiert: tel:+4917640551085 -> +4917640551085.
 - Alle Bilder auf WebP optimiert (45-92% kleiner), jpg als Fallback erhalten.
 - AssetImage mit automatischem WebP->JPG Fallback erweitert.
 - Impressum-, Datenschutz- und 404-Seiten erstellt.
