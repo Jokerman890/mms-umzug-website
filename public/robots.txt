@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mms-umzug.de/sitemap.xml
+Sitemap: https://jokerman890.github.io/mms-umzug-website/sitemap.xml
