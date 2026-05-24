@@ -102,7 +102,7 @@ export function ContactSection() {
         </p>
       ) : (
         <form className="quote-form" onSubmit={handleSubmit} noValidate>
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="access_key" value="529d7bf3-12ae-40dc-8185-4e144496e12f" />
           <input type="hidden" name="subject" value={`Anfrage über ${company.domain}`} />
           <input type="hidden" name="from_name" value="MMS Umzug Website" />
           <label>
