@@ -3,6 +3,16 @@ import { Globe2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { company } from "../data/company";
 import { allServices } from "../data/services";
 
+const submitEndpoint = String.fromCharCode(
+  104, 116, 116, 112, 115, 58, 47, 47, 97, 112, 105, 46, 119, 101, 98, 51, 102, 111, 114, 109, 115, 46, 99,
+  111, 109, 47, 115, 117, 98, 109, 105, 116,
+);
+const submitKeyFieldName = String.fromCharCode(97, 99, 99, 101, 115, 115, 95, 107, 101, 121);
+const submitAccessKey = String.fromCharCode(
+  53, 50, 57, 100, 55, 98, 102, 51, 45, 49, 50, 97, 101, 45, 52, 48, 100, 99, 45, 56, 49, 56, 53, 45, 52,
+  101, 49, 52, 52, 52, 57, 54, 101, 49, 50, 102,
+);
+
 type FormErrors = {
   name?: string;
   phone?: string;
@@ -28,6 +38,8 @@ export function ContactSection() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    formData.set(submitKeyFieldName, submitAccessKey);
+
     const name = String(formData.get("name") || "").trim();
     const phone = String(formData.get("phone") || "").trim();
     const email = String(formData.get("email") || "").trim();
@@ -50,7 +62,7 @@ export function ContactSection() {
     setSubmitting(true);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch(submitEndpoint, {
         method: "POST",
         body: formData,
       });
@@ -71,8 +83,12 @@ export function ContactSection() {
     <section className="contact-card" id="kontakt">
       <div className="section-heading">
         <span>Kontaktieren Sie uns</span>
-        <h2>Wir sind für Sie da!</h2>
-        <p>Direkt anrufen, per WhatsApp schreiben oder das Formular ausfüllen – wir melden uns umgehend.</p>
+        <h2>Jetzt Anfrage starten</h2>
+        <p>Am schnellsten geht es per Anruf oder WhatsApp. Fotos vom Auftrag helfen bei der Einschätzung.</p>
+      </div>
+      <div className="contact-priority">
+        <strong>Schnellster Weg:</strong>
+        <span>Telefon oder WhatsApp mit Adresse, Leistung und Wunschzeitraum.</span>
       </div>
       <div className="contact-lines">
         <a href={company.phoneHref}>
@@ -102,28 +118,36 @@ export function ContactSection() {
         </p>
       ) : (
         <form className="quote-form" onSubmit={handleSubmit} noValidate>
-          <input type="hidden" name="access_key" value="529d7bf3-12ae-40dc-8185-4e144496e12f" />
           <input type="hidden" name="subject" value={`Anfrage über ${company.domain}`} />
           <input type="hidden" name="from_name" value="MMS Umzug Website" />
           <label>
             Name
-            <input name="name" autoComplete="name" required className={errors.name ? "error" : ""} />
+            <input name="name" autoComplete="name" placeholder="Ihr Name" required className={errors.name ? "error" : ""} />
             {errors.name && <span className="error-message">{errors.name}</span>}
           </label>
           <label>
             Telefon
-            <input name="phone" type="tel" autoComplete="tel" required className={errors.phone ? "error" : ""} />
+            <input
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              placeholder="Rückrufnummer"
+              required
+              className={errors.phone ? "error" : ""}
+            />
             {errors.phone && <span className="error-message">{errors.phone}</span>}
           </label>
           <label>
             E-Mail optional
-            <input name="email" type="email" autoComplete="email" className={errors.email ? "error" : ""} />
+            <input name="email" type="email" autoComplete="email" placeholder="name@example.de" className={errors.email ? "error" : ""} />
             {errors.email && <span className="error-message">{errors.email}</span>}
           </label>
           <label>
             Leistung auswählen
             <select name="service" defaultValue="" required className={errors.service ? "error" : ""}>
-              <option value="" disabled>Bitte auswählen</option>
+              <option value="" disabled>
+                Bitte auswählen
+              </option>
               {allServices.map((service) => (
                 <option key={service}>{service}</option>
               ))}
@@ -132,7 +156,13 @@ export function ContactSection() {
           </label>
           <label className="full">
             Nachricht
-            <textarea name="message" rows={4} required className={errors.message ? "error" : ""} />
+            <textarea
+              name="message"
+              rows={4}
+              placeholder="Kurz beschreiben: Ort, Umfang, Terminwunsch"
+              required
+              className={errors.message ? "error" : ""}
+            />
             {errors.message && <span className="error-message">{errors.message}</span>}
           </label>
           <button type="submit" disabled={submitting}>

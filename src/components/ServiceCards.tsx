@@ -9,9 +9,9 @@ export function ServiceCards() {
         <div className="section-heading center">
           <span>Unsere Leistungen</span>
           <h2>
-            Wir bieten <em>mehr als nur</em> Umzüge
+            Umzug, Entrümpelung und Dienstleistungen in <em>Bremen</em>
           </h2>
-          <p>Alles aus einer Hand - schnell, sauber und zuverlässig.</p>
+          <p>Alles aus einer Hand: Umzug, Räumung, Montage, Transport und Hilfe rund ums Haus.</p>
         </div>
         <div className="service-grid">
           {services.map((service, index) => {
@@ -31,6 +31,7 @@ export function ServiceCards() {
                 <h3>{service.title}</h3>
                 <p>{service.text}</p>
                 <a href="#kontakt" aria-label={`${service.title} anfragen`}>
+                  <span>Anfragen</span>
                   <ArrowRight aria-hidden="true" />
                 </a>
               </motion.article>

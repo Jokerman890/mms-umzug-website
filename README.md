@@ -6,7 +6,7 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 
 ## Projektstatus
 
-- Version: `1.0.7`
+- Version: `1.1.2`
 - Deployment-Ziel: `https://jokerman890.github.io/mms-umzug-website/`
 - Framework: React + TypeScript + Vite
 - Styling: Tailwind CSS plus projektweites CSS in `src/styles/globals.css`
@@ -15,11 +15,12 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 ## Features
 
 - Hero mit Bremen-Parallax-Hintergrund, Originalfahrzeug und drei Conversion-CTAs
+- YouWare-inspirierter Boost fuer Hero-Hierarchie, Anfragefuehrung und Service-CTAs
 - Dezente Motion-Reveals, CTA-Glow, Hover-Feedback und respektierte Reduced-Motion-Einstellung
 - Mobile Sticky CTA fuer Telefon, WhatsApp und Angebotsformular
 - Leistungsbereich mit Glassmorphism-Karten und runden Glow-Icons
 - Trust-Bar, Ablauf in 5 Schritten, Fuhrpark/Galerie, Warum-MMS-Bereich
-- Kontaktformular mit Frontend-Validierung und vorbereiteter E-Mail-Anfrage
+- Kontaktformular mit Frontend-Validierung und Web3Forms-Submit
 - FAQ, Footer, Impressum-/Datenschutz-Links als Platzhalteranker
 - SEO-Metadaten und JSON-LD `MovingCompany`
 - Originale MMS-Fahrzeugbilder, Logo-Web-Pack und Favicons

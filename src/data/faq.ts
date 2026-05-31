@@ -21,7 +21,8 @@ export const faqItems = [
   },
   {
     question: "Wie bekomme ich ein Angebot?",
-    answer: "Kontaktieren Sie uns telefonisch, per WhatsApp oder über das Formular. Wir melden uns mit einem fairen Angebot.",
+    answer:
+      "Kontaktieren Sie uns telefonisch, per WhatsApp oder über das Formular. Fotos, Adresse und gewünschter Zeitraum helfen bei einer schnellen Einschätzung.",
   },
   {
     question: "Was kostet ein Umzug oder eine Entrümpelung?",
