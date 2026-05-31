@@ -1,10 +1,16 @@
-import { ClipboardList, MessageCircle, Phone } from "lucide-react";
+import { Camera, ClipboardList, MapPin, MessageCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import type { CSSProperties } from "react";
 import { assetPaths, company } from "../data/company";
 import { AssetImage } from "./AssetImage";
 
 const trustPills = ["Schnell & zuverlässig", "Faire Preise", "Persönlicher Service", "Bremen & Umgebung"];
+
+const assistPoints = [
+  { icon: Phone, title: "Direkt erreichbar", text: "Anrufen und Auftrag besprechen" },
+  { icon: Camera, title: "Fotos senden", text: "Umfang per WhatsApp einschätzen" },
+  { icon: MapPin, title: "Lokal in Bremen", text: "Für Bremen und Umgebung" },
+];
 
 export function Hero() {
   return (
@@ -68,6 +74,18 @@ export function Hero() {
             className="hero-vehicle"
             loading="eager"
           />
+          <div className="hero-assist-panel" aria-label="Schnelle Anfragevorteile">
+            {assistPoints.map((point) => {
+              const Icon = point.icon;
+              return (
+                <div className="assist-item" key={point.title}>
+                  <Icon aria-hidden="true" />
+                  <strong>{point.title}</strong>
+                  <span>{point.text}</span>
+                </div>
+              );
+            })}
+          </div>
         </motion.div>
 
         <div className="hero-trust" aria-label="Vorteile">

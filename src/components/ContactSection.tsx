@@ -26,8 +26,12 @@ export function ContactSection() {
     <section className="contact-card" id="kontakt">
       <div className="section-heading">
         <span>Kontaktieren Sie uns</span>
-        <h2>Wir sind für Sie da!</h2>
-        <p>Direkt anrufen, per WhatsApp schreiben oder das Formular als E-Mail vorbereiten.</p>
+        <h2>Jetzt Anfrage starten</h2>
+        <p>Am schnellsten geht es per Anruf oder WhatsApp. Fotos vom Auftrag helfen bei der Einschätzung.</p>
+      </div>
+      <div className="contact-priority">
+        <strong>Schnellster Weg:</strong>
+        <span>Telefon oder WhatsApp mit Adresse, Leistung und Wunschzeitraum.</span>
       </div>
       <div className="contact-lines">
         <a href={company.phoneHref}>
@@ -54,15 +58,15 @@ export function ContactSection() {
       <form className="quote-form" onSubmit={handleSubmit}>
         <label>
           Name
-          <input name="name" autoComplete="name" required />
+          <input name="name" autoComplete="name" placeholder="Ihr Name" required />
         </label>
         <label>
           Telefon
-          <input name="phone" type="tel" autoComplete="tel" required />
+          <input name="phone" type="tel" autoComplete="tel" placeholder="Rückrufnummer" required />
         </label>
         <label>
           E-Mail optional
-          <input name="email" type="email" autoComplete="email" />
+          <input name="email" type="email" autoComplete="email" placeholder="name@example.de" />
         </label>
         <label>
           Leistung auswählen
@@ -77,7 +81,7 @@ export function ContactSection() {
         </label>
         <label className="full">
           Nachricht
-          <textarea name="message" rows={4} required />
+          <textarea name="message" rows={4} placeholder="Kurz beschreiben: Ort, Umfang, Terminwunsch" required />
         </label>
         <button type="submit">
           <Send aria-hidden="true" />

@@ -2,6 +2,13 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.0.8 - 2026-05-31
+
+- YouWare-inspirierter Boost angewendet: klarere Hero-Hierarchie, staerkere Anfragefuehrung und bessere Service-CTAs.
+- Hero um konkrete Anfragevorteile fuer Telefon, WhatsApp-Fotos und lokalen Bremen-Service ergaenzt.
+- Kontaktbereich mit priorisiertem Schnellkontakt-Hinweis, besseren Formular-Placeholders und klarerer Anfragecopy geschaerft.
+- Leistungen und FAQ textlich lokaler und conversion-orientierter formuliert, ohne unbestaetigte Claims oder Fake-Bewertungen.
+
 ## 1.0.7 - 2026-05-19
 
 - Website mit konsistenten Motion-Reveals fuer Trust-Bar, Ablauf, Galerie, Warum-MMS und FAQ aufgewertet.
