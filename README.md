@@ -6,7 +6,7 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 
 ## Projektstatus
 
-- Version: `1.1.2`
+- Version: `1.1.3`
 - Deployment-Ziel: `https://jokerman890.github.io/mms-umzug-website/`
 - Framework: React + TypeScript + Vite
 - Styling: Tailwind CSS plus projektweites CSS in `src/styles/globals.css`
@@ -23,7 +23,7 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 - Kontaktformular mit Frontend-Validierung und Web3Forms-Submit
 - FAQ, Footer, Impressum-/Datenschutz-Links als Platzhalteranker
 - SEO-Metadaten und JSON-LD `MovingCompany`
-- Originale MMS-Fahrzeugbilder, Logo-Web-Pack und Favicons
+- Originale MMS-Fahrzeugbilder, saubere Logo-Quelle, optimierte WebP-Bilder und Favicons
 
 ## Projektstruktur
 
@@ -64,14 +64,15 @@ Die Website nutzt Assets aus `public/images/mms/`.
 
 Wichtige Dateien:
 
-- `mms-logo.svg`: gruen/orange Voll-Logo aus dem Web-Pack fuer Header/Footer
+- `mms-logo-source.svg`: saubere bereitgestellte Logo-Quelle
+- `mms-logo.svg`: gruen/orange Voll-Logo fuer Header/Footer
 - `mms-logo-wordmark.svg`: MMS-Wortmarke ohne kleines Umzug-Wort fuer die grosse Hero-Headline
 - `mms-logo.png`: PNG-Fallback/Asset-Variante
 - `mms-logo-white.svg` und `mms-logo-white.png`: helle Varianten
 - `mms-fahrzeug-hero.jpg`: Hero-Fahrzeugbild
 - `mms-fahrzeug-front.jpg`, `mms-fahrzeug-heck.jpg`, `mms-fahrzeug-seite.jpg`: Galerieansichten
-- `mms-fahrzeug-collage.jpg`: vollstaendige Fahrzeug-Collage
-- `mms-montage.jpg`: Montage-/Einsatzbild
+- `mms-fahrzeug-collage.jpg`: bereitgestellte vollstaendige Originalfahrzeug-Collage
+- `mms-montage.jpg`: bereitgestelltes Montage-/Einsatzbild mit Original-MMS-Bezug
 - `bremen-background.jpg`: Hero-Parallax-Hintergrund
 - `bremen-page-parallax.png`: helles seitenweites Bremen-Parallax-Bild fuer den gesamten Seitenhintergrund
 

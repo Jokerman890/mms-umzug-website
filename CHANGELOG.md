@@ -2,6 +2,13 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.1.3 - 2026-05-31
+
+- Neue bereitgestellte Originalbilder fuer Fahrzeug-Collage und Montage-/Einsatzmotiv eingebunden.
+- Logo-Quelle aus der sauberen MMS-Datei erneuert; Website-Logo bleibt transparent in gruen/orange.
+- WebP-Varianten und PNG-Logo-Fallbacks neu optimiert.
+- Cache-Busting fuer Logo-Assets aktualisiert und sichtbare Umlautfehler in Navigation/Galerie korrigiert.
+
 ## 1.1.2 - 2026-05-31
 
 - YouWare-inspirierter Boost angewendet: klarere Hero-Hierarchie, staerkere Anfragefuehrung und bessere Service-CTAs.
