@@ -2,6 +2,13 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.1.2 - 2026-05-31
+
+- YouWare-inspirierter Boost angewendet: klarere Hero-Hierarchie, staerkere Anfragefuehrung und bessere Service-CTAs.
+- Hero um konkrete Anfragevorteile fuer Telefon, WhatsApp-Fotos und lokalen Bremen-Service ergaenzt.
+- Kontaktbereich mit priorisiertem Schnellkontakt-Hinweis, besseren Formular-Placeholders und klarerer Anfragecopy geschaerft.
+- Leistungen und FAQ textlich lokaler und conversion-orientierter formuliert, ohne unbestaetigte Claims oder Fake-Bewertungen.
+
 ## 1.1.1 - 2026-05-24
 
 - Sitemap.xml und robots.txt erstellt.
@@ -15,7 +22,7 @@ Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 - AssetImage mit automatischem WebP->JPG Fallback erweitert.
 - Impressum-, Datenschutz- und 404-Seiten erstellt.
 - Footer-Links auf echte Impressum/Datenschutz-Seiten umgestellt.
-- Lighthouse-Audit durchgeführt (90/100 Performance, 100/100 Rest).
+- Lighthouse-Audit durchgefuehrt (90/100 Performance, 100/100 Rest).
 
 ## 1.0.7 - 2026-05-19
 

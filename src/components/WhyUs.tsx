@@ -26,7 +26,9 @@ export function WhyUs() {
         <h2>
           Zuverlässigkeit, auf die Sie sich <em>verlassen können</em>
         </h2>
-        <p>Wir arbeiten schnell, sauber und kundenorientiert. Ihre Zufriedenheit steht für uns an erster Stelle.</p>
+        <p>
+          Klare Abstimmung, saubere Ausführung und direkte Erreichbarkeit. So bleibt Ihr Auftrag planbar.
+        </p>
         <ul>
           {bullets.map((bullet, index) => (
             <motion.li

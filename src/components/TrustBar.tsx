@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { CalendarDays, HandCoins, MapPin, ShieldCheck } from "lucide-react";
 
 const items = [
-  { icon: CalendarDays, value: "Schnell", label: "Termin abstimmen" },
-  { icon: HandCoins, value: "Fair", label: "transparent anfragen" },
+  { icon: CalendarDays, value: "Schnell", label: "Termin direkt abstimmen" },
+  { icon: HandCoins, value: "Fair", label: "transparentes Angebot" },
   { icon: MapPin, value: "Bremen", label: "und Umgebung" },
   { icon: ShieldCheck, value: "Sorgfältig", label: "sauber ausgeführt" },
 ];
