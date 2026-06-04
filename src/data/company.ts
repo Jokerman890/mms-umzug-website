@@ -29,5 +29,7 @@ export const assetPaths = {
   logo: `${publicAsset("images/mms/mms-logo.svg")}?v=clean-assets-20260531`,
   logoWordmark: `${publicAsset("images/mms/mms-logo-wordmark.svg")}?v=clean-assets-20260531`,
   bremen: publicAsset("images/mms/bremen-background.webp"),
-  heroVehicle: publicAsset("images/mms/mms-fahrzeug-hero.webp"),
+  bremenHeroVideoMp4: publicAsset("images/mms/bremen-hero-parallax.mp4"),
+  bremenHeroVideoWebm: publicAsset("images/mms/bremen-hero-parallax.webm"),
+  heroVehicle: publicAsset("images/mms/mms-fahrzeug-front-betriebshof.webp"),
 };

@@ -6,7 +6,7 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 
 ## Projektstatus
 
-- Version: `1.1.3`
+- Version: `1.2.2`
 - Deployment-Ziel: `https://jokerman890.github.io/mms-umzug-website/`
 - Framework: React + TypeScript + Vite
 - Styling: Tailwind CSS plus projektweites CSS in `src/styles/globals.css`
@@ -14,11 +14,13 @@ Die Website ist auf schnelle Lead-Generierung ausgelegt: Telefonanruf, WhatsApp-
 
 ## Features
 
-- Hero mit Bremen-Parallax-Hintergrund, Originalfahrzeug und drei Conversion-CTAs
+- Hero mit Bremen-Parallax-Hintergrund, Originalfahrzeug, Liquid-Glass-Servicevisualisierung und drei Conversion-CTAs
+- Stark gedaempftes Parallax-Hero-Video aus dem bestehenden Bremen-Motiv mit statischem Poster-Fallback
+- Bremen-Servicevisualisierung mit 10/20/30-km-Ringen, Service-Bubbles und direkter Anfragefuehrung
 - YouWare-inspirierter Boost fuer Hero-Hierarchie, Anfragefuehrung und Service-CTAs
 - Dezente Motion-Reveals, CTA-Glow, Hover-Feedback und respektierte Reduced-Motion-Einstellung
 - Mobile Sticky CTA fuer Telefon, WhatsApp und Angebotsformular
-- Leistungsbereich mit Glassmorphism-Karten und runden Glow-Icons
+- Leistungsbereich mit staerkeren Liquid-Glass-Karten und runden Glow-Icons
 - Trust-Bar, Ablauf in 5 Schritten, Fuhrpark/Galerie, Warum-MMS-Bereich
 - Kontaktformular mit Frontend-Validierung und Web3Forms-Submit
 - FAQ, Footer, Impressum-/Datenschutz-Links als Platzhalteranker
@@ -70,10 +72,15 @@ Wichtige Dateien:
 - `mms-logo.png`: PNG-Fallback/Asset-Variante
 - `mms-logo-white.svg` und `mms-logo-white.png`: helle Varianten
 - `mms-fahrzeug-hero.jpg`: Hero-Fahrzeugbild
+- `mms-fahrzeug-front-betriebshof.jpg`: neues Originalfahrzeug-Foto fuer Hero/Galerie
+- `mms-fahrzeug-seite-betriebshof.jpg`: neues Originalfahrzeug-Foto mit Seitenbeschriftung
+- `mms-abrissarbeit.jpg`: bereitgestelltes Einsatzbild fuer Abrissarbeiten
+- `mms-gartenarbeit.jpg`: bereitgestelltes Einsatzbild fuer Gartenarbeit
 - `mms-fahrzeug-front.jpg`, `mms-fahrzeug-heck.jpg`, `mms-fahrzeug-seite.jpg`: Galerieansichten
 - `mms-fahrzeug-collage.jpg`: bereitgestellte vollstaendige Originalfahrzeug-Collage
 - `mms-montage.jpg`: bereitgestelltes Montage-/Einsatzbild mit Original-MMS-Bezug
 - `bremen-background.jpg`: Hero-Parallax-Hintergrund
+- `bremen-hero-parallax.mp4` und `bremen-hero-parallax.webm`: dezentes Hero-Parallax-Video aus dem Bremen-Hintergrund
 - `bremen-page-parallax.png`: helles seitenweites Bremen-Parallax-Bild fuer den gesamten Seitenhintergrund
 
 Wichtig: Fahrzeugbilder duerfen nicht generativ ersetzt, kuenstlich umbeschriftet oder verzerrt werden.

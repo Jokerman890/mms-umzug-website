@@ -1,21 +1,20 @@
-import { Camera, ClipboardList, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ClipboardList, MessageCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import type { CSSProperties } from "react";
 import { assetPaths, company } from "../data/company";
 import { AssetImage } from "./AssetImage";
+import { ServiceAreaVisualizer } from "./ServiceAreaVisualizer";
 
 const trustPills = ["Schnell & zuverlässig", "Faire Preise", "Persönlicher Service", "Bremen & Umgebung"];
-
-const assistPoints = [
-  { icon: Phone, title: "Direkt erreichbar", text: "Anrufen und Auftrag besprechen" },
-  { icon: Camera, title: "Fotos senden", text: "Umfang per WhatsApp einschätzen" },
-  { icon: MapPin, title: "Lokal in Bremen", text: "Für Bremen und Umgebung" },
-];
 
 export function Hero() {
   return (
     <section className="hero" id="start" style={{ "--hero-bg-image": `url("${assetPaths.bremen}")` } as CSSProperties}>
       <div className="hero-bg" aria-hidden="true" />
+      <video className="hero-video-bg" aria-hidden="true" autoPlay muted loop playsInline preload="metadata" poster={assetPaths.bremen}>
+        <source src={assetPaths.bremenHeroVideoWebm} type="video/webm" />
+        <source src={assetPaths.bremenHeroVideoMp4} type="video/mp4" />
+      </video>
       <div className="hero-overlay" aria-hidden="true" />
       <div className="hero-motion-field" aria-hidden="true">
         <span />
@@ -34,9 +33,9 @@ export function Hero() {
               <AssetImage src={assetPaths.logoWordmark} alt="MMS" fallbackLabel="MMS" className="hero-title-logo" />
               <span>Umzug</span>
             </span>{" "}
-            Bremen -
+            <span className="hero-title-location">Bremen</span>
             <br />
-            Umzug, Entrümpelung & Dienstleistungen aus einer Hand
+            <span className="hero-title-detail">- Umzug, Entrümpelung & Dienstleistungen aus einer Hand</span>
           </h1>
           <p>
             Zuverlässige Unterstützung bei Umzügen, Entrümpelungen, Abrissarbeiten, Gartenarbeiten,
@@ -67,25 +66,14 @@ export function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }}
         >
+          <ServiceAreaVisualizer />
           <AssetImage
             src={assetPaths.heroVehicle}
             alt="Originalfahrzeug von MMS Umzug mit sichtbarer Beschriftung"
-            fallbackLabel="Originalfahrzeug unter public/images/mms/mms-fahrzeug-hero.jpg einfügen"
+            fallbackLabel="Originalfahrzeug unter public/images/mms/mms-fahrzeug-front-betriebshof.jpg einfügen"
             className="hero-vehicle"
             loading="eager"
           />
-          <div className="hero-assist-panel" aria-label="Schnelle Anfragevorteile">
-            {assistPoints.map((point) => {
-              const Icon = point.icon;
-              return (
-                <div className="assist-item" key={point.title}>
-                  <Icon aria-hidden="true" />
-                  <strong>{point.title}</strong>
-                  <span>{point.text}</span>
-                </div>
-              );
-            })}
-          </div>
         </motion.div>
 
         <div className="hero-trust" aria-label="Vorteile">

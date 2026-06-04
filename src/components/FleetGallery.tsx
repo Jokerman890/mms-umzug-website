@@ -26,7 +26,13 @@ export function FleetGallery() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.42, delay: index * 0.05, ease: "easeOut" }}
             >
-              <AssetImage src={image.src} alt={image.alt} fallbackLabel="Originalbild fehlt" className="gallery-image" />
+              <AssetImage
+                src={image.src}
+                alt={image.alt}
+                fallbackLabel="Originalbild fehlt"
+                className="gallery-image"
+                style={{ objectPosition: image.objectPosition }}
+              />
             </motion.figure>
           ))}
         </div>

@@ -2,6 +2,33 @@
 
 Alle relevanten Aenderungen an der MMS Umzug Website werden hier dokumentiert.
 
+## 1.2.2 - 2026-06-04
+
+- Hero-Design nach UI-Review verfeinert: ruhigere Typografie, kompaktere Servicevisualisierung und klarere Fahrzeugflaeche.
+- Parallax-Video stark gedaempft, damit es nur noch als dezente Hintergrundtiefe wirkt und nicht vom Angebot ablenkt.
+- Desktop-Komposition ausgeglichener gestaltet: weniger uebergrosse Headline, bessere Balance zwischen Text, Karte, CTAs und Originalfahrzeug.
+
+## 1.2.1 - 2026-06-04
+
+- Hero-Hintergrund um ein dezentes Parallax-Video aus dem bestehenden Bremen-Motiv erweitert.
+- MP4- und WebM-Varianten fuer breite Browserunterstuetzung erzeugt.
+- Statisches Bremen-Bild bleibt als Poster/Fallback erhalten; bei `prefers-reduced-motion` wird das Video ausgeblendet.
+
+## 1.2.0 - 2026-06-04
+
+- Neue Liquid-Glass-Version der Landingpage gestaltet: hellere Grundstimmung, staerkere Glasflaechen, Lichtkanten und gruenen MMS-Glow.
+- Hero um eine interaktive Bremen-Servicevisualisierung mit 10/20/30-km-Ringen, Service-Bubbles und Schnellkontakt-CTAs erweitert.
+- Originalfahrzeug weiterhin ausschliesslich aus bereitgestellten MMS-Assets eingebunden und als echte Bildflaeche in das neue Glaslayout integriert.
+- Mobile Darstellung fuer die Visualisierung optimiert: Hauptkarte zuerst, Touch-CTAs direkt danach und reduzierte Service-Dichte auf kleinen Viewports.
+- Bestehende Formulare, Firmendaten, Leistungen, Galerie und SEO-Struktur beibehalten.
+
+## 1.1.4 - 2026-05-31
+
+- Neue bereitgestellte Einsatzbilder fuer Fahrzeug, Abrissarbeit, Gartenarbeit und Montage eingebunden.
+- Hero-Fahrzeug auf das neue Originalfoto mit sichtbarer MMS-Beschriftung umgestellt.
+- Galerie-Reihenfolge und Bildausschnitte fuer die neuen Motive angepasst.
+- JPG/WebP-Varianten der neuen Bilder optimiert.
+
 ## 1.1.3 - 2026-05-31
 
 - Neue bereitgestellte Originalbilder fuer Fahrzeug-Collage und Montage-/Einsatzmotiv eingebunden.

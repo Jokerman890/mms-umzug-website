@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { CSSProperties } from "react";
 import { ImageOff } from "lucide-react";
 import { cn } from "../lib/utils";
 
@@ -8,9 +9,10 @@ type AssetImageProps = {
   className?: string;
   fallbackLabel?: string;
   loading?: "lazy" | "eager";
+  style?: CSSProperties;
 };
 
-export function AssetImage({ src, alt, className, fallbackLabel, loading = "lazy" }: AssetImageProps) {
+export function AssetImage({ src, alt, className, fallbackLabel, loading = "lazy", style }: AssetImageProps) {
   const [failed, setFailed] = useState(false);
   const [currentSrc, setCurrentSrc] = useState(src);
 
@@ -28,6 +30,7 @@ export function AssetImage({ src, alt, className, fallbackLabel, loading = "lazy
       src={currentSrc}
       alt={alt}
       className={className}
+      style={style}
       loading={loading}
       decoding="async"
       onError={() => {
